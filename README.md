@@ -1,0 +1,1 @@
+DOC credit: You are free to copy, distribute and adapt the material, as long as you attribute the work to the Department of Conservation and abide by the other licence terms. Please use the following format: Crown Copyright: Department of Conservation Te Papa Atawhai [year].

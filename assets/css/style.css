@@ -1,0 +1,137 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*-------------------------------Colours*/
+
+.container {
+    background-color: #CAD6B8;
+}
+
+.title {
+    color: #83d46c;
+}
+
+.title h5 {
+    color: #808078;
+}
+
+#nz-map {
+    fill: #83d46c; 
+    background-color: #CAD6B8;
+}
+
+.region:hover {
+    fill: #76E177;
+}
+
+#footer-details {
+    background-color: #CAD6B8;
+}
+
+.social-links i {
+    color: #808078;
+}
+
+.social-links i:hover {
+    color: #83d46c;
+}
+
+.copyright p {
+    color: #808078;
+}
+
+/*-------------------------------Title*/
+
+.title {
+    margin: 20px 30px 10px;
+    font-family: "verdana", sans-serif ;
+    text-align: center;
+}
+
+.title h5 {
+    font-style: italic;
+}
+
+/*-------------------------------Images*/
+
+.images {
+    display: none;
+}
+
+/*-------------------------------Map*/
+
+#nz-map {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    width: 100vw;
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+
+/*-------------------------------Map*/
+
+.links {
+    display: none;
+}
+
+/*-------------------------------Footer*/
+
+#footer-details {
+    text-align: center;
+    bottom: 0;
+}
+
+.social-links {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    margin-top: 1%;
+}
+
+.fab {
+    text-shadow: .10rem .10rem #080808;
+}
+
+.copyright p {
+    font-size: .7rem;
+}
+
+/*-------------------------------Media Queries*/
+
+/* Large devices (desktops, 992px and up)*/
+
+@media (min-width: 992px) { 
+   
+    .images {
+        max-width: 20vw;
+        display: block;
+        padding: 10px;
+        margin-left: 10px;
+    }
+        
+    .nz-images {
+        float: left;
+        clear: left;
+    }    
+    
+    .links {
+        max-width: 20vw;
+        display: block;
+        padding: 10px;
+        margin-right: 10px;
+        
+    }
+    
+    .nz-links {
+        float: right;
+        clear: right;
+    }
+    
+    #nz-map {
+        width: 50vw;
+    }
+    
+}
