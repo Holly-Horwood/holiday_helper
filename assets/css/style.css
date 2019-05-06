@@ -17,7 +17,7 @@
     color: #83d46c;
 }
 
-.title h5 {
+.title h4 {
     color: #6c757d;
 }
 
@@ -62,14 +62,16 @@ a.navbar-brand  {
 
 /*-------------------------------Title*/
 
-.title {
+.title, h1 {
     margin: 20px 30px 10px;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 3.7rem;
     text-align: center;
 }
 
-.title h5 {
+.title h4 {
     font-style: italic;
+    font-weight: 350;
 }
 
 /*-------------------------------Images*/
@@ -127,7 +129,7 @@ a.navbar-brand  {
 @media (min-width: 992px) { 
    
     .images {
-        max-width: 20vw;
+        max-width: 100%;
         padding-left: 10px;
         padding-bottom: 5px;
     }
@@ -136,6 +138,7 @@ a.navbar-brand  {
         transform: scale(1.5);
         z-index: 1;
         position: relative;
+        margin-left: 20%;
     }
         
     .nz-images {
@@ -145,12 +148,14 @@ a.navbar-brand  {
     .nz-images h6 {
         margin-left: 10px;
         padding-bottom: 10px;
+        font-size: 1.3rem;
     }
     
     .links {
         display: inline-block;
-        padding: 10px;
+        padding-bottom: 10px;
         margin-right: 10px;
+        font-size: 1.3rem;
         
     }
     
@@ -163,7 +168,12 @@ a.navbar-brand  {
         z-index: -1;
     }
     
-  
+    .newsletter-form, p {
+        padding: 2px;
+        margin-bottom: 20px;
+        width: 100%;
+        font-size: 1.3rem;
+    }
     
 }
 
