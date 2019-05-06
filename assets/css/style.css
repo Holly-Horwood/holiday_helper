@@ -5,17 +5,29 @@
 
 /*-------------------------------Colours*/
 
+.navbar {
+    background-color: #83d46c
+}
+
+.container {
+    color: #6c757d;
+}
+
 .title {
     color: #83d46c;
 }
 
 .title h5 {
-    color: #808078;
+    color: #6c757d;
 }
 
 #nz-map {
     fill: #83d46c; 
     background-color: #CAD6B8;
+}
+
+.links-title, .newsletter-title {
+    color: #83d46c;
 }
 
 #footer-details {
@@ -40,6 +52,12 @@
    margin: 0;
    width:100%;
    font-family: 'Quicksand', cursive, sans-serif;
+}
+
+/*-------------------------------Navbar*/
+
+a.navbar-brand  {
+    font-weight: 700;
 }
 
 /*-------------------------------Title*/
@@ -110,20 +128,23 @@
 @media (min-width: 992px) { 
    
     .images {
-        max-width: 20vw;
         display: block;
+        max-width: 20vw;
         padding-left: 10px;
-        padding-bottom: 30px;
+        padding-bottom: 5px;
     }
         
     .nz-images {
         display: inline-block;
-        
         margin-left: 10px;
-    }    
+    } 
+    
+    .nz-images h6 {
+        margin-left: 10px;
+        padding-bottom: 10px;
+    }
     
     .links {
-        max-width: 20vw;
         display: inline-block;
         padding: 10px;
         margin-right: 10px;
