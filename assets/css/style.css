@@ -5,10 +5,6 @@
 
 /*-------------------------------Colours*/
 
-.container {
-    background-color: #CAD6B8;
-}
-
 .title {
     color: #83d46c;
 }
@@ -20,10 +16,6 @@
 #nz-map {
     fill: #83d46c; 
     background-color: #CAD6B8;
-}
-
-.region:hover {
-    fill: #76E177;
 }
 
 #footer-details {
@@ -42,11 +34,19 @@
     color: #808078;
 }
 
+/*-------------------------------General*/
+
+.container {
+   margin: 0;
+   width:100%;
+}
+
 /*-------------------------------Title*/
 
 .title {
     margin: 20px 30px 10px;
-    font-family: "verdana", sans-serif ;
+    font-family: 'Quicksand', cursive, sans-serif;
+    font-weight: 700;
     text-align: center;
 }
 
@@ -56,8 +56,9 @@
 
 /*-------------------------------Images*/
 
-.images {
+.nz-images {
     display: none;
+    font-family: 'Quicksand', cursive, sans-serif;
 }
 
 /*-------------------------------Map*/
@@ -66,9 +67,11 @@
     display: inline-block;
     position: relative;
     text-align: center;
-    width: 100vw;
+    width: 95%;
     padding-top: 2%;
     padding-left: 2%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
@@ -108,30 +111,41 @@
     .images {
         max-width: 20vw;
         display: block;
-        padding: 10px;
-        margin-left: 10px;
+        padding-left: 10px;
+        padding-bottom: 30px;
     }
         
     .nz-images {
-        float: left;
-        clear: left;
+        display: inline-block;
+        
+        margin-left: 10px;
     }    
     
     .links {
         max-width: 20vw;
-        display: block;
+        display: inline-block;
         padding: 10px;
         margin-right: 10px;
         
     }
     
     .nz-links {
-        float: right;
-        clear: right;
+        
     }
     
     #nz-map {
+        display: inline-block;
         width: 50vw;
     }
     
 }
+
+/* Extra large devices (1200px and up)*/
+
+@media (min-width: 1200px) {
+    
+    .container {
+        max-width: 3000px;
+    }    
+}
+
