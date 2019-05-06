@@ -35,11 +35,11 @@
 }
 
 .social-links i {
-    color: #808078;
+    color: #83d46c;
 }
 
 .social-links i:hover {
-    color: #83d46c;
+    color: #fff;
 }
 
 .copyright p {
@@ -81,7 +81,7 @@ a.navbar-brand  {
 /*-------------------------------Map*/
 
 #nz-map {
-    display: inline-block;
+    
     position: relative;
     text-align: center;
     width: 95%;
@@ -95,7 +95,7 @@ a.navbar-brand  {
 
 /*-------------------------------Map*/
 
-.links {
+.nz-links {
     display: none;
 }
 
@@ -118,7 +118,7 @@ a.navbar-brand  {
 }
 
 .copyright p {
-    font-size: .7rem;
+    font-size: 1rem;
 }
 
 /*-------------------------------Media Queries*/
@@ -133,10 +133,17 @@ a.navbar-brand  {
         padding-left: 10px;
         padding-bottom: 5px;
     }
+    
+    .images:hover {
+        transform: scale(1.5);
+        z-index: 1;
+        
+    }
         
     .nz-images {
         display: inline-block;
         margin-left: 10px;
+        margin-right: 10px;
     } 
     
     .nz-images h6 {
@@ -160,7 +167,7 @@ a.navbar-brand  {
     }
     
     #nz-map {
-        display: inline-block;
+        z-index: -1;
         width: 50%;
     }
     
