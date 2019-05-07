@@ -31,7 +31,7 @@
 }
 
 #footer-details {
-    background-color: #CAD6B8;
+    background-color: #fff;
 }
 
 .social-links i {
@@ -49,15 +49,14 @@
 /*-------------------------------General*/
 
 .container {
-   margin: 0;
    width:100%;
    font-family: 'Quicksand', cursive, sans-serif;
 }
 
 /*-------------------------------Navbar*/
 
-a.navbar-brand  {
-    font-weight: 700;
+.navbar  {
+    display: none;
 }
 
 /*-------------------------------Title*/
@@ -65,16 +64,17 @@ a.navbar-brand  {
 .title, h1 {
     margin: 20px 30px 10px;
     font-weight: 600;
-    font-size: 3.7rem;
+    font-size: 1.8rem;
     text-align: center;
 }
 
 .title h4 {
     font-style: italic;
     font-weight: 350;
+    font-size: 1rem;
 }
 
-/*-------------------------------Images*/
+/*-------------------------------Left Sidebar*/
 
 .nz-images {
     display: none;
@@ -86,14 +86,29 @@ a.navbar-brand  {
     
     position: relative;
     text-align: center;
-    max-width: 50vw;
     padding-top: 2%;
     padding-bottom: 2%;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
-/*-------------------------------Links*/
+.search-options {
+    float: left;
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 30px;
+    z-index: 1;
+}
+
+.radio-buttons {
+    text-align: left;
+    padding-top: 5px;
+}
+
+.key {
+    position: absolute;
+    margin-left: 250px;
+}
+
+/*-------------------------------Right Sidebar*/
 
 .nz-sidebar {
     display: none;
@@ -104,11 +119,10 @@ a.navbar-brand  {
 #footer-details {
     text-align: center;
     bottom: 0;
-    width: 100%;
 }
 
 .social-links {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     margin-bottom: 0;
     margin-top: 1%;
 }
@@ -118,19 +132,54 @@ a.navbar-brand  {
 }
 
 .copyright p {
-    font-size: 1rem;
+    font-size: .7rem;
 }
 
 /*-------------------------------Media Queries*/
 
+/* Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) {
+    
+    .navbar {
+        display: block;
+    }
+    
+}
+
+/*Medium devices (tablets, 768px and up*/
+
+@media (min-width: 768px) {
+    
+    .search-options {
+    margin-top: 150px;
+    margin-left: 150px;
+    }
+    
+}
+
 /* Large devices (desktops, 992px and up)*/
 
 @media (min-width: 992px) { 
+    
+    /*NAVBAR*/
+
+    a.navbar-brand  {
+        font-weight: 400;
+    }
+    
+    /*TITLE*/
+    
+    .title h1 {
+        font-size: 2rem;
+    }
+    
+    /*LEFT SIDEBAR*/
    
     .images {
         max-width: 100%;
-        padding-left: 10px;
-        padding-bottom: 5px;
+        padding-left: 10%;
+        padding-bottom: 5%;
     }
     
     .images:hover {
@@ -139,39 +188,66 @@ a.navbar-brand  {
         position: relative;
         margin-left: 20%;
     }
+    
+    .kea-img {
+        padding: 0;
+        width: 25vh;
+    }
         
     .nz-images {
         display: inline-block;
     } 
     
     .nz-images h6 {
-        margin-left: 10px;
-        padding-bottom: 10px;
+        margin-left: 10%;
+        padding-bottom: 5%;
         font-size: 1.3rem;
     }
     
-    .links {
-        display: inline-block;
-        padding-bottom: 10px;
-        margin-right: 10px;
-        font-size: 1.3rem;
-        
-    }
-    
-    .nz-links {
-        display: inline-block;
-    }
+    /*MAP*/
     
     .map-div {
         max-width: 50vw;
         z-index: -1;
     }
     
+    /*RIGHT SIDEBAR*/
+    
+    .links {
+        display: inline-block;
+        padding-bottom: 10px;
+        margin-right: 10px;
+        font-size: 1rem;
+        
+    }
+    
+    .nz-sidebar {
+        display: inline-block;
+    }
+    
     .newsletter-form, p {
         padding: 2px;
         margin-bottom: 20px;
         width: 100%;
-        font-size: 1.3rem;
+        font-size: 1rem;
+    }
+    
+    .btn-lg {
+        background-color: #83d46c;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    
+    .btn-link {
+        color: #fff;
+    }
+    
+    .btn-lg:hover {
+        background-color: #83d499;
+    }
+    
+    .donate-btn {
+        text-align: center;
     }
     
 }
