@@ -13,11 +13,11 @@
     color: #79807D;
 }
 
-.title {
+.page-title h1 {
     color: #83d46c;
 }
 
-.title h4 {
+.page-title h4 {
     color: #79807D;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .social-links i:hover {
-    color: #fff;
+    color: #808078;
 }
 
 .copyright p {
@@ -60,14 +60,14 @@
 
 /*-------------------------------Title*/
 
-.title, h1 {
+.page-title {
     margin: 20px 30px 10px;
     font-weight: 600;
     font-size: 1.8rem;
     text-align: center;
 }
 
-.title h4 {
+.page-title h4 {
     font-style: italic;
     font-weight: 350;
     font-size: 1rem;
@@ -80,14 +80,6 @@
 }
 
 /*-------------------------------Map*/
-
-.map-div {
-    
-    position: relative;
-    text-align: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
-}
 
 .search-options {
     float: left;
@@ -165,8 +157,12 @@
     
     /*TITLE*/
     
-    .title h1 {
-        font-size: 2rem;
+    .page-title h1 {
+        font-size: 3rem;
+    }
+
+    .page-title h4 {
+        font-size: 1.2rem;
     }
     
     /*LEFT SIDEBAR*/
@@ -201,10 +197,7 @@
     
     /*MAP*/
     
-    .map-div {
-        max-width: 50vw;
-        z-index: -1;
-    }
+    
     
     /*RIGHT SIDEBAR*/
     
@@ -262,6 +255,16 @@
     .donate-btn {
         text-align: center;
         margin-bottom: 5%;
+    }
+    
+    /*FOOTER*/
+    
+    .social-links {
+        font-size: 1.7rem;
+    }
+    
+    .copyright p {
+        font-size: 1rem;
     }
     
 }
