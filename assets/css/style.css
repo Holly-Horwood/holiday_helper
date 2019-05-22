@@ -21,10 +21,7 @@
     color: #79807D;
 }
 
-.map-div {
-    fill: #83d46c; 
-    background-color: #CAD6B8;
-}
+
 
 .links-title, .newsletter-title, .support {
     color: #83d46c;
@@ -80,6 +77,7 @@
 }
 
 /*-------------------------------Map*/
+
 
 .search-options {
     float: left;
