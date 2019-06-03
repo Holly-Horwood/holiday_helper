@@ -13,20 +13,10 @@
     <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/png" />
     <!--GOOGLE FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
+    <!--LEAFLET-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
     <!--CSS STYLE SHEET REFERENCE-->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
-    <!--EMAILJS-->
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-        emailjs.init("user_6IJi6iUGTMBKBwowkfsSh");
-        })();
-    </script>
-    <!--JVECTOR-->
-    <link rel="stylesheet" href="assets/jsvector/jquery-jvectormap-2.0.3.css" type="text/css" media="all"/>
-    <script src="assets/jsvector/jquery.js"></script>
-    <script src="assets/jsvector/jquery-jvectormap-2.0.3.min.js"></script>
-    <script src="assets/jsvector/jquery-jvectormap-nz-mill.js"></script>
     <title>NZ Holiday Helper</title>
 </head>
 
@@ -49,7 +39,7 @@
     <!--START OF IMAGES-->
 <div class="container-fluid">
     <div class="row d-flex">
-        <div class="nz-images col">
+        <div class="nz-images col-lg-2 col-md-hidden">
             <img class=images src="assets/images/snow-valley.jpg" alt="Ahuriri Valley">
             <h6>Ahuriri Valley</h6>
             <img class=images src="assets/images/cathedralcove.jpg" alt="Catherdral Cove Coromandal">
@@ -62,7 +52,8 @@
         <!--SEND OF IMAGES-->
 
         <!--START OF MAP-->
-        <div class="map-div col-lg-8 col-md-12 col-sm-12">
+        <div class="mymap col-lg-8 col-md-12 col-sm-12">
+            <!--START OF DROPDOWN-->
             <div class="search-options">
                 <div class="dropdown">
                     <select class="select-box">
@@ -78,18 +69,15 @@
                     </form>
                 </div>
             </div>
-            <!--DATA FILE-->
-            <div id="data"></div>
-            <!--END OF DATA FILE-->
+            <!--END OF DROPDOWN-->
+            <!--START OF LEAFLET MAP-->
+            <div id="mapContainer"></div>
+            <!--END OF LEAFLET MAP-->
+        </div>    
             
-            <!--START OF JVECTOR MAP-->
-               <div id="map">
-                </div> 
-            
-            <!--END OF JVECTOR MAP-->
 
         <!--START OF LINKS-->
-        <div class="col nz-sidebar">
+        <div class="nz-sidebar col-lg-2 col-md-hidden">
             <div class="nz-links">
                 <h3 class="links-title">Helpful Links</h3>
                 <a class="links" href="https://www.aa.co.nz/travel/things-to-do/summer-must-dos/" target="_blank">Top 101 Things to do in New Zealand</a>
@@ -102,7 +90,7 @@
                 <p>Forest & Bird protect some of New Zealands most unique and rare animal species.</p>
             </div>
             <div class="donate-btn">
-                <button type="button" class="btn btn-lg"Click to Donate</button>
+                <button type="button" class="btn btn-lg" Click to Donate</button>
                 <a class="btn-link" href="https://www.forestandbird.org.nz/support-us/donate-forest-bird" target="_blank">Click to Donate</a>   
             </div>
             <div class="newsletter nz-links">
@@ -158,12 +146,19 @@
     </footer>
     <!--END OF FOOTER-->
 
-    <!--JAVASCRIPT-->
-    <script src="assets/js/sendEmail.js"></script>
-    
-    <script type="text/javascript" src="assets/js/script.js"></script>
+    <!--SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+        emailjs.init("user_6IJi6iUGTMBKBwowkfsSh");
+        })();
+    </script>
+    <script src="assets/js/sendEmail.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 
 </html>

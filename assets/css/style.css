@@ -78,6 +78,9 @@
 
 /*-------------------------------Map*/
 
+#mapContainer {
+    height: 900px;
+}
 
 .search-options {
     float: left;
