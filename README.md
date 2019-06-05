@@ -70,6 +70,7 @@ Media
 - DOC Location Map Api - Crown Copyright: Department of Conservation Te Papa Atawhai [2019].
 - kea.jpg & cathedralcove.jpg both obtained from Flickers Creative Commons website.
 - All other images supplied by Holly Horwood and Ryan Connor from our personal collection.
+- Tent Icon 
 
 Acknowledgements
 I received inspiration for this project from X
