@@ -78,9 +78,10 @@
 
 /*-------------------------------Map*/
 
-#mapContainer {
-    height: 850px;
-    z-index: 0;
+#map {
+    height: 860px;
+    width: 100%;
+    background-color: grey;
 }
 
 .search-options {

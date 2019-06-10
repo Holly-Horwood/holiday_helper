@@ -68,11 +68,12 @@ All content written by Holly Horwood.
 
 Media
 - DOC Location Map Api - Crown Copyright: Department of Conservation Te Papa Atawhai [2019].
+- Leaflet tiles.  Esri, DeLorme, NAVTEQ (Check this Holly!!!!!!!!!!)
 - kea.jpg & cathedralcove.jpg both obtained from Flickers Creative Commons website.
 - All other images supplied by Holly Horwood and Ryan Connor from our personal collection.
-- Tent Icon 
+- Tent Icon by icons8.com
 
 Acknowledgements
 I received inspiration for this project from X
-Thanks to Sebastian Immel my mentor for all of his help.
+Thanks to Sebastian Immel my mentor for all of his help and patience.  Thanks also to the team at Code Institute especially Nakita McCool.
 
