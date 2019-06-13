@@ -81,7 +81,10 @@
 #map {
     height: 860px;
     width: 100%;
-    background-color: grey;
+}
+
+.gm-svpc {
+    display: none;
 }
 
 .search-options {

@@ -12,10 +12,23 @@ function initMap() {
                     }]
                 },
                 {
-                    "elementType": "labels.icon",
+                    "elementType": "labels",
                     "stylers": [{
                         "visibility": "off"
                     }]
+                },
+                {
+                    "elementType": "labels.icon",
+                    "stylers": [{
+                            "color": "#85df75"
+                        },
+                        {
+                            "saturation": -5
+                        },
+                        {
+                            "visibility": "off"
+                        }
+                    ]
                 },
                 {
                     "elementType": "labels.text.fill",
@@ -70,13 +83,6 @@ function initMap() {
                 },
                 {
                     "featureType": "poi",
-                    "elementType": "labels.text",
-                    "stylers": [{
-                        "visibility": "off"
-                    }]
-                },
-                {
-                    "featureType": "poi",
                     "elementType": "labels.text.fill",
                     "stylers": [{
                         "color": "#757575"
@@ -107,13 +113,6 @@ function initMap() {
                     "elementType": "geometry",
                     "stylers": [{
                         "color": "#ffffff"
-                    }]
-                },
-                {
-                    "featureType": "road",
-                    "elementType": "labels",
-                    "stylers": [{
-                        "visibility": "off"
                     }]
                 },
                 {
@@ -180,18 +179,30 @@ function initMap() {
                 },
                 {
                     "featureType": "water",
-                    "elementType": "labels.text",
-                    "stylers": [{
-                        "visibility": "off"
-                    }]
-                },
-                {
-                    "featureType": "water",
                     "elementType": "labels.text.fill",
                     "stylers": [{
                         "color": "#9e9e9e"
                     }]
                 }
             ]
+
         });
-}
+        
+    // Link to DOC geoJSON data
+    var script = document.createElement('script');
+    script.src = 'https://opendata.arcgis.com/datasets/c417dcd7c9fb47b489df1f9f0a673190_0.geojson';
+    document.getElementsByTagName('head')[0].appendChild(script);
+    }
+    
+    // Loop through the results array and place a marker for each
+    // set of coordinates.
+    window.eqfeed_callback = function(results) {
+            for (var i = 0; i < results.features.length; i++) {
+                var coords = results.features[i].geometry.coordinates;
+                var latLng = new google.maps.LatLng(coords[1], coords[0]);
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map
+                });
+            }
+    }
