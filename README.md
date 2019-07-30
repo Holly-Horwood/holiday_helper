@@ -10,13 +10,17 @@ This website was designed for educational purposes only for the Code Institute. 
 ---
 
 #### Motivation/Purpose
-Exploring New Zealand's wilderness has always been a passion for my family and friends.  I wanted to put together a simple site that gave the user fast access to key camping information like huts and campsites around the country.  I wanted to display each site on a simple easy to follow map so that locations could be identified quickly and the end user could narrow down their search in the shortest amount of time.
+This is my second milestone project for the Full Stack Software Development course through Code Institute.  The decision to create this site came froma passion for exploring New Zealand's wilderness with family and friends.  I wanted to put together a simple site that gave the user fast access to key camping information like huts and campsites around the country.  I wanted to display each site on a simple easy to follow map so that locations could be identified quickly and the end user could narrow down their search in the shortest amount of time.
+
 
 #### Technologies Used
 
--   Bootstrap with Javascript and jQuery
 -   HTML5
 -   CSS3
+-   Bootstrap
+-   Javascript
+-   jQuery
+
 
 ##### Other resources:
 
@@ -24,6 +28,8 @@ Exploring New Zealand's wilderness has always been a passion for my family and f
 -   W3C Markup & CSS Validator
 -   CSS Matic
 -   Google Fonts
+-   Google Maps API
+-   DOC NZ API
 
 ---
 
@@ -33,46 +39,12 @@ Exploring New Zealand's wilderness has always been a passion for my family and f
 I spoke with those in the community involved in outdoor activities such as hunting, hiking and fishing, I also spoke with some tourists staying at a local camping ground to find out what they thought the website should include.  After considering their comments the most important aspect they commonly wanted was a map with easily identifiable markers that you could click on for more info about that particular site. The tourists inparticular wanted something easy to use on a mobile phone and commented that they often are on the road before they decide where they will next be staying so need something mobile friendly. 
 
 *Audience* 
-This site was designed for the general New Zealand public and tourists looking for affordable accommodation amongst the New Zealand wilderness.  
+This site was designed for the general New Zealand public and tourists looking for accommodation on protected Department of Conservation land around New Zealand
 
 *Navigation*
 It is essential that the website is easy to navigate on different sized devices.  I decided to use relatively neutral colours for the content but with an eye-catching green to represent the element of nature.  The website consists of only one scrolling page.  On desktop view there are additional sidebars offering the user some extra information and links to other sites that could be helpful as well as some images from around New Zealand for inspiration.  
 
 TODO:
-
-*Features:*  
-Each page has an identical header with a logo on the left and I have also included a call to action booking button on the right, so it is always obvious how to book.
-Each page also has a footer with social links to Facebook, Instagram, twitter and YouTube as well as copyright information.
-Each page has a centred white header.
-All call to action/book now buttons link to a modal where the customer can fill out there details, select the service they would like and book a date and time.
-
-
-*Home Page:*
-This page has a simple header for the business and subheadings stating where the business is located and what it does.  There is also a quote on the bottom right from Winston Churchill.  I have a fixed background image of a small herd of horses running through the woods that is fixed to the background for all pages, however I have removed this for smaller devices as it looked to busy and have replaced it with a simple cleaner grey background.
-
-*About:*
-This page gives an overview of the business as well as the two key services offered.  There are also two Youtube videos alongside the overview text that show examples of the sport of Working Equitation.
-
-*Horses:*
-This page has a carousel with photos and the names of the horses that live on the farm.  I have used green again to highlight the carousel navigation on this page.
-
-*Trail Rides:*
-This page is before lessons as during my research we found that trekking is the main source of income before lessons.  It lists the different trail rides available and each one has its own call to action.  At the bottom of the page is another smaller carousel showing photos from past treks as inspiration for customers.
-
-*Lessons:*
-This page is very similar to the trail rides page although it doesn’t have a carousel, there is an image on the left of the clinic pricing which also highlights a special deal.
-
-*Facilities:*
-This page has another carousel with text explaining what each image is.
-
-*Contact:*
-This page has a contact form on the left requesting name, phone number and email as well as a textarea for any message the customer may want to add.  There is also a bright green send button.  On the right there is an interactive google map and below that the business contact phone number, address and email.
-
-*Interaction Design:* 
-The site has separate pages and was designed so there was no need to scroll down on larger devices.
-There is a navigation bar at the top that displays all pages in a logical sequence of how somebody searching the site would likely want to view them and a book now button.
-Every page that shows a service also has additional call to action buttons that when clicked on will launch a modal where the customer can book a service.
-The Lessons page also has a link at the bottom of the page to a separate PDF that will open ina a separate tab when clicked on.  The Contact page has an interactive google map.
 
 ##### Balsamic Mockups
 
