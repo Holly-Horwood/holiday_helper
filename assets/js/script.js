@@ -199,14 +199,14 @@ xhr.onreadystatechange = function(){
  if(this.readyState === 4 && this.status === 200){
   let json = JSON.parse(this.responseText);
   var marker;
-  const iconTent = {url: "assets\images\tent.png", scaledSize: new google.maps.Size(25, 25)};
+  const iconTent = {url: "assets/images/tent.png", scaledSize: new google.maps.Size(25, 25)};
   var infoWindow = new google.maps.InfoWindow();
   marker = new google.maps.Marker({
       position: newZealand,
       map: map,
   });
   //for (let i = 0; i < json.length; i++){
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < json.length; i++){
       let campsite = json[i];
       console.log(campsite.name + ',' + campsite.x + ',' + campsite.y)
       let latLong = convertToLatLong(campsite.x, campsite.y);
@@ -236,14 +236,14 @@ xhr.onreadystatechange = function(){
 xhr.send();
 }
 
-//const taupo = {lat:-38.840708, lng: 175.903380};
-//const islandNthZoom = document.getElementById('ni' + 'radio-camp');
+/*const taupo = {lat:-38.840708, lng: 175.903380};
+const islandNthZoom = document.getElementById('ni' + 'radio-camp');
 
 
-//islandNthZoom.addListener('onChange', function() {
-   // map.setZoom(10);
-    //map.setCenter(LatLng.getPosition(taupo));
-  //});
+islandNthZoom.addListener('onChange', function() {
+    map.setZoom(10);
+    map.setCenter(LatLng.getPosition(taupo));
+});*/
 
 
 
