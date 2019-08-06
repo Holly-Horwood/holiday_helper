@@ -20,6 +20,7 @@ This is my second milestone project for the Full Stack Software Development cour
 -   Bootstrap
 -   Javascript
 -   jQuery
+    (https://jquery.com/)
 
 
 ##### Other resources:
@@ -30,6 +31,7 @@ This is my second milestone project for the Full Stack Software Development cour
 -   Google Fonts
 -   Google Maps API
 -   DOC NZ API
+-   MDN
 
 ---
 
@@ -48,14 +50,15 @@ TODO:
 
 ##### Balsamic Mockups
 
-![balsamic mockup1](assets/wireframes/balsamic1.PNG)
-![balsamic mockup2](assets/wireframes/balsamic2.PNG)
-![balsamic mockup3](assets/wireframes/balsamic3.PNG)
-![balsamic mockup4](assets/wireframes/balsamic4.PNG)
+![Balsamic mockup](assets/wireframes/nzholidayhelper.bmpr)
 
 ---
 
+##### User Story
 
+As a user on the website I want the ability to find accommodation at DOC sites around New Zealand. End user goal: Find a place to stay End business goal: Make finding accommodation easier Acceptance criteria: * Available to anyone travelling or holidaying in New Zealand.
+
+---
 
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 

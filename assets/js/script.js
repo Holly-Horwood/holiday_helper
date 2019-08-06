@@ -1,7 +1,7 @@
 const apiKey = "AGzltg49Lx3bVQJdJjToy20ssY8ep6iJ9ai504vK";
 const xhr = new XMLHttpRequest();
 const newZealand = { lat: -40.9006, lng: 174.886 };
-const taupo = { lat: -38.840708, lng: 175.90338 };
+const putaruru = { lat: -38.038500, lng: 175.792754 };     
 var marker;
 var map;
 
@@ -263,6 +263,7 @@ function searchSelect(e) {
         url: "assets/images/tent.png",
         scaledSize: new google.maps.Size(20, 20)
       };
+      TODO:
       var infoWindow = new google.maps.InfoWindow();
 
       xhr.open("GET", "https://api.doc.govt.nz/v2/campsites", true);
@@ -270,21 +271,20 @@ function searchSelect(e) {
 
       xhr.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
+            map.setZoom(7);
+            map.setCenter(putaruru);
+
           let json = JSON.parse(this.responseText);
           //loops through campsite json data and returns campsite information and adds to map
           for (let i = 0; i < json.length; i++) {
-            for (let i = 0; i < json.length; i++) {
-              let campsite = json[i];
-              console.log(campsite.name + "," + campsite.x + "," + campsite.y);
-              let latLong = convertToLatLong(campsite.x, campsite.y);
-              marker = new google.maps.Marker({
-                position: new google.maps.LatLng(latLong[0], latLong[1]),
-                zoom: 6,
-                map: taupo,
-                center: taupo,
-                icon: iconTent
-              });
-            }
+            let campsite = json[i];
+            console.log(campsite.name + "," + campsite.x + "," + campsite.y);
+            let latLong = convertToLatLong(campsite.x, campsite.y);
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(latLong[0], latLong[1]),
+              map: map,
+              icon: iconTent
+            });
           }
         }
       };
