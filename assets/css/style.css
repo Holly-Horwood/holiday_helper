@@ -21,7 +21,9 @@
     color: #79807D;
 }
 
-
+.fa-search {
+    color: #83d46c;
+}
 
 .links-title, .newsletter-title, .support {
     color: #83d46c;
@@ -85,6 +87,12 @@
 
 .gm-svpc {
     display: none;
+}
+
+.search-title {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
 .search-options {

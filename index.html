@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--BOOTSTRAP REFERENCE-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--FONT AWESOME REFERENCE-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!--FAVICON-->
     <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/png" />
     <!--GOOGLE FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
     <!--CSS STYLE SHEET REFERENCE-->
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <!--GEO.JS LIBRARY-->
     <script type="text/javascript" src="assets\js\geo.js"></script>
-    
+
 
     <title>NZ Holiday Helper</title>
 </head>
@@ -34,81 +36,95 @@
         <h1 class="titleh1">NZ Holiday Helper</h1>
         <h4 class="titleh4">Your guide to Department of Conservation sites around New Zealand</h4>
     </div>
-      <!--END OF HEADER-->
+    <!--END OF HEADER-->
 
     <!--START OF IMAGES-->
-<div class="container-fluid">
-    <div class="row d-flex">
-        <div class="nz-images col-lg-2 col-md-hidden">
-            <img class=images src="assets/images/snow-valley.jpg" alt="Ahuriri Valley">
-            <h6>Ahuriri Valley</h6>
-            <img class=images src="assets/images/cathedralcove.jpg" alt="Catherdral Cove Coromandal">
-            <h6>Cathedral Cove</h6>
-            <img class=images src="assets/images/lindis.jpg" alt="Lindis Pass">
-            <h6>The Lindis Pass</h6>
-            <img class=images src="assets/images/fishing.jpg" alt="Man Fishing the Makarora River">
-            <h6>Makarora River</h6>
-        </div>
-        <!--SEND OF IMAGES-->
+    <div class="container-fluid">
+        <div class="row d-flex">
+            <div class="nz-images col-lg-2 col-md-hidden">
+                <img class=images src="assets/images/snow-valley.jpg" alt="Ahuriri Valley">
+                <h6>Ahuriri Valley</h6>
+                <img class=images src="assets/images/cathedralcove.jpg" alt="Catherdral Cove Coromandal">
+                <h6>Cathedral Cove</h6>
+                <img class=images src="assets/images/lindis.jpg" alt="Lindis Pass">
+                <h6>The Lindis Pass</h6>
+                <img class=images src="assets/images/fishing.jpg" alt="Man Fishing the Makarora River">
+                <h6>Makarora River</h6>
+            </div>
+            <!--SEND OF IMAGES-->
 
-        <!--START OF MAP-->
-        <div class="mymap col-lg-8 col-md-12 col-sm-12">
-            <!--START OF DROPDOWN-->
-            <div class="search-options">
-                <div class="dropdown">
-                    <select class="select-box">
-                        <option class="ni">North Island</option>
-                        <option class="si">South Island</option>
-                    </select>
+            <!--START OF MAP-->
+            <div class="mymap col-lg-8 col-md-12 col-sm-12">
+                <!--START OF DROPDOWN-->
+                <div class="search-options">
+                    <div class="search">
+                        <i class="fas fa-search"></i>
+                        <h6 class="search-title">Search:</h6>
+                    </div>
+                    <div class="dropdown">
+                        <select id="dropdown-island" class="select-box">
+                            <option class="ni">--select island--</option>
+                            <option class="ni" value="ni">North Island</option>
+                            <option class="si" value="si">South Island</option>
+                        </select>
+                    </div>
+                    <div class="radio-buttons">
+                        <form>
+                            <input id="radio-hut" class="radio-hut" type="radio" name="radio-option" value="Hut">
+                            Hut<br>
+                            <input id="radio-camp" class="radio-camp" type="radio" name="radio-option" value="Campsite">
+                            Campsite<br>
+                        </form>
+                    </div>
                 </div>
-                <div class="radio-buttons">
-                    <form>
-                        <input class="radio-hut" type="radio" name="option-hut" value="Hut"> Hut<br>
-                        <input class="radio-camp" type="radio" name="option-camp" value="Campsite"> Campsite<br>
+                <!--END OF DROPDOWN-->
+
+                <!--START OF GOOGLE MAP-->
+
+                <div id="map"></div>
+                <div id="doc"></div>
+                <!--END OF GOOGLE MAP-->
+            </div>
+
+
+            <!--START OF LINKS-->
+            <div class="nz-sidebar col-lg-2 col-md-hidden">
+                <div class="nz-links">
+                    <h3 class="links-title">Helpful Links</h3>
+                    <a class="links" href="https://www.aa.co.nz/travel/things-to-do/summer-must-dos/"
+                        target="_blank">Top 101 Things to do in New Zealand</a>
+                    <a class="links"
+                        href="https://theculturetrip.com/pacific/new-zealand/articles/14-new-zealand-travel-tips-that-might-save-your-life/"
+                        target="_blank">14 Travel Tips That Might Save Your Life</a>
+                    <a class="links" href="https://www.metservice.com/national/home" target="_blank">Metservice Weather
+                        NZ</a>
+                </div>
+                <div class="donate">
+                    <h3 class="support">Help Our Wildlife</h3>
+                    <img class=kea-img src="assets/images/kea.jpg" alt="Kea Flying">
+                    <p>Forest & Bird protect some of New Zealands most unique and rare animal species.</p>
+                </div>
+                <div class="donate-btn">
+                    <button type="button" class="btn btn-lg" Click to Donate</button> <a class="btn-link"
+                        href="https://www.forestandbird.org.nz/support-us/donate-forest-bird" target="_blank">Click to
+                        Donate</a>
+                </div>
+                <div class="newsletter nz-links">
+                    <h3 class="newsletter-title">Newsletter</h3>
+                    <p>Sign up for our monthly newsletter to keep up to date with tourism and travel news from around
+                        New Zealand</p>
+                    <form class="newsletter-form" onsubmit="return sendMail(this);" method="POST">
+                        <input class="newsletter-form" type="text" name="name" placeholder="Full Name" /><br>
+                        <input class="newsletter-form" type="email" name="emailaddress"
+                            placeholder="Email Address" /><br>
+                        <input class="newsletter-form" type="submit" value="Sign Up!" />
                     </form>
                 </div>
             </div>
-            <!--END OF DROPDOWN-->
-            
-            <!--START OF GOOGLE MAP-->
-
-            <div id="map"></div>
-            <div id="doc"></div>
-            <!--END OF GOOGLE MAP-->
-        </div>    
-            
-
-        <!--START OF LINKS-->
-        <div class="nz-sidebar col-lg-2 col-md-hidden">
-            <div class="nz-links">
-                <h3 class="links-title">Helpful Links</h3>
-                <a class="links" href="https://www.aa.co.nz/travel/things-to-do/summer-must-dos/" target="_blank">Top 101 Things to do in New Zealand</a>
-                <a class="links" href="https://theculturetrip.com/pacific/new-zealand/articles/14-new-zealand-travel-tips-that-might-save-your-life/" target="_blank">14 Travel Tips That Might Save Your Life</a>
-                <a class="links" href="https://www.metservice.com/national/home" target="_blank">Metservice Weather NZ</a>
-            </div>
-            <div class="donate">
-                <h3 class="support">Help Our Wildlife</h3>
-                <img class=kea-img src="assets/images/kea.jpg" alt="Kea Flying">
-                <p>Forest & Bird protect some of New Zealands most unique and rare animal species.</p>
-            </div>
-            <div class="donate-btn">
-                <button type="button" class="btn btn-lg" Click to Donate</button>
-                <a class="btn-link" href="https://www.forestandbird.org.nz/support-us/donate-forest-bird" target="_blank">Click to Donate</a>   
-            </div>
-            <div class="newsletter nz-links">
-                <h3 class="newsletter-title">Newsletter</h3>
-                <p>Sign up for our monthly newsletter to keep up to date with tourism and travel news from around New Zealand</p>
-                <form class="newsletter-form" onsubmit="return sendMail(this);"  method="POST">
-                    <input class="newsletter-form" type="text" name="name" placeholder="Full Name" /><br>
-                    <input class="newsletter-form" type="email" name="emailaddress" placeholder="Email Address" /><br>
-                    <input class="newsletter-form" type="submit" value="Sign Up!" />
-                </form>
-            </div>
+            <!--END OF LINKS-->
         </div>
-        <!--END OF LINKS-->
     </div>
-</div>
-       
+
 
     <!--START OF FOOTER-->
     <footer class="container-fluid">
@@ -118,25 +134,25 @@
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
                             <i class="fab fa-facebook-square" aria-hidden="true"></i>
-                                <span class="sr-only">Facebook</span>
+                            <span class="sr-only">Facebook</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
                             <i class="fab fa-twitter" aria-hidden="true"></i>
-                                <span class="sr-only">Twitter</span>
+                            <span class="sr-only">Twitter</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
-                                <span class="sr-only">Instagram</span>
+                            <span class="sr-only">Instagram</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
                             <i class="fab fa-youtube" aria-hidden="true"></i>
-                                <span class="sr-only">Youtube</span>
+                            <span class="sr-only">Youtube</span>
                         </a>
                     </li>
                 </ul>
@@ -149,21 +165,26 @@
     <!--END OF FOOTER-->
 
     <!--SCRIPTS-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <script type="text/javascript">
-        (function() {
-        emailjs.init("user_6IJi6iUGTMBKBwowkfsSh");
+        (function () {
+            emailjs.init("user_6IJi6iUGTMBKBwowkfsSh");
         })();
     </script>
     <script src="assets/js/sendEmail.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuKj1VRvEKFlfVKXjVlYa_4lOJEm3tusU&callback=initMap">
-    </script>
-    
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuKj1VRvEKFlfVKXjVlYa_4lOJEm3tusU&callback=initMap">
+        </script>
+
 </body>
 
 </html>
