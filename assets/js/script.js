@@ -2,9 +2,56 @@ const apiKey = "AGzltg49Lx3bVQJdJjToy20ssY8ep6iJ9ai504vK";
 const xhr = new XMLHttpRequest();
 const newZealand = { lat: -40.9006, lng: 174.886 };
 const putaruru = { lat: -38.0385, lng: 175.792754 };
-const ashburton = { lat: -43.631001, lng: 170.998599 };
-var marker;
-var map;
+const tekapo = { lat: -44.010373, lng: 170.48368 };
+const markers = [];
+var map, iconHut, iconTent, marker, infoWindow;
+
+// Clears all markers from map then sets memory array back to 0
+function clearMarkers() {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers.length = 0;
+}
+
+// sets all map properties
+function resetMap(mapCentre) {
+  clearMarkers();
+  map.setZoom(7);
+  map.setCenter(mapCentre);
+  map.setMapTypeId("terrain");
+}
+
+//loops through site json data and gets site information and adds to map
+function setMarkers(json, icon) {
+  for (let i = 0; i < json.length; i++) {
+    let site = json[i];
+    let latLong = convertToLatLong(site.x, site.y);
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(latLong[0], latLong[1]),
+      map: map,
+      icon: icon
+    });
+    markers.push(marker);
+  }
+  infoWindow = new google.maps.InfoWindow();
+}
+
+// Calls DOC API for the specified Island and site type
+function docCall(siteType, mapCentre, icon) {
+  xhr.open("GET", "https://api.doc.govt.nz/v2/" + siteType, true);
+  xhr.setRequestHeader("X-API-Key", apiKey);
+
+  xhr.onreadystatechange = function() {
+    if (this.readyState === 4 && this.status === 200) {
+      resetMap(mapCentre);
+      let json = JSON.parse(this.responseText);
+      setMarkers(json, icon);
+    }
+  };
+
+  xhr.send();
+}
 
 // Initialize and add the map
 function initMap() {
@@ -244,18 +291,14 @@ function initMap() {
       }
     ]
   });
-  // Create an array of alphabetical characters used to label the markers.
-  var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  // Add some markers to the map.
-  var markers = marker.map(function(marker, i) {
-    return new google.maps.Marker({
-      position: location,
-      label: labels[i % labels.length]
-    });
-  });
-  // Add a marker clusterer to manage the markers.
-  var markerCluster = new MarkerClusterer(map, markers,
-      {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+  iconTent = {
+    url: "assets/images/tent.png",
+    scaledSize: new google.maps.Size(20, 20)
+  };
+  iconHut = {
+    url: "assets/images/hut.png",
+    scaledSize: new google.maps.Size(20, 20)
+  };
 }
 
 // Loops through json data relevant to search criteria selected, zooms in on Island and shows site markers
@@ -269,150 +312,15 @@ rc.onclick = searchSelect;
 function searchSelect(e) {
   if (rc.checked) {
     if (di.value == "ni") {
-      //Calls to DOC API and returns campsite data
-      var iconTent = {
-        url: "assets/images/tent.png",
-        scaledSize: new google.maps.Size(20, 20)
-      };
-      TODO: var infoWindow = new google.maps.InfoWindow();
-
-      xhr.open("GET", "https://api.doc.govt.nz/v2/campsites", true);
-      xhr.setRequestHeader("X-API-Key", apiKey);
-
-      xhr.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          map.setZoom(7);
-          map.setCenter(putaruru);
-
-          let json = JSON.parse(this.responseText);
-          //loops through campsite json data and returns campsite information and adds to map
-          for (let i = 0; i < json.length; i++) {
-            let campsite = json[i];
-            console.log(campsite.name + "," + campsite.x + "," + campsite.y);
-            let latLong = convertToLatLong(campsite.x, campsite.y);
-            marker = new google.maps.Marker({
-              position: new google.maps.LatLng(latLong[0], latLong[1]),
-              map: map,
-              icon: iconTent
-            });
-          }
-        }
-      };
-
-      xhr.send();
+      docCall("campsites", putaruru, iconTent);
     } else if (di.value == "si") {
-      console.log("south island + campsites");
-      //Calls to DOC API and returns campsite data
-      var iconTent = {
-        url: "assets/images/tent.png",
-        scaledSize: new google.maps.Size(20, 20)
-      };
-      TODO: var infoWindow = new google.maps.InfoWindow();
-
-      xhr.open("GET", "https://api.doc.govt.nz/v2/campsites", true);
-      xhr.setRequestHeader("X-API-Key", apiKey);
-
-      xhr.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          map.setZoom(7);
-          map.setCenter(ashburton);
-
-          let json = JSON.parse(this.responseText);
-          //loops through campsite json data and returns campsite information and adds to map
-          for (let i = 0; i < json.length; i++) {
-            let campsite = json[i];
-            console.log(campsite.name + "," + campsite.x + "," + campsite.y);
-            let latLong = convertToLatLong(campsite.x, campsite.y);
-            marker = new google.maps.Marker({
-              position: new google.maps.LatLng(latLong[0], latLong[1]),
-              map: map,
-              icon: iconTent
-            });
-          }
-        }
-      };
-
-      xhr.send();
+      docCall("campsites", tekapo, iconTent);
     }
   } else if (rh.checked) {
     if (di.value == "ni") {
-      console.log("north island + huts");
-      //Calls to DOC API and returns campsite data
-      var iconHut = {
-        url: "assets/images/hut.png",
-        scaledSize: new google.maps.Size(20, 20)
-      };
-      TODO: var infoWindow = new google.maps.InfoWindow();
-
-      xhr.open("GET", "https://api.doc.govt.nz/v2/huts", true);
-      xhr.setRequestHeader("X-API-Key", apiKey);
-
-      xhr.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          map.setZoom(7);
-          map.setCenter(putaruru);
-
-          let json = JSON.parse(this.responseText);
-          //loops through campsite json data and returns campsite information and adds to map
-          for (let i = 0; i < json.length; i++) {
-            let campsite = json[i];
-            console.log(campsite.name + "," + campsite.x + "," + campsite.y);
-            let latLong = convertToLatLong(campsite.x, campsite.y);
-            marker = new google.maps.Marker({
-              position: new google.maps.LatLng(latLong[0], latLong[1]),
-              map: map,
-              icon: iconHut
-            });
-          }
-        }
-      };
-
-      xhr.send();
+      docCall("huts", putaruru, iconHut);
     } else if (di.value == "si") {
-      console.log("south island + huts");
-      //Calls to DOC API and returns campsite data
-      var iconHut = {
-        url: "assets/images/hut.png",
-        scaledSize: new google.maps.Size(20, 20)
-      };
-      TODO: var infoWindow = new google.maps.InfoWindow();
-
-      
-
-      xhr.open("GET", "https://api.doc.govt.nz/v2/huts", true);
-      xhr.setRequestHeader("X-API-Key", apiKey);
-
-      xhr.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          map.setZoom(7);
-          map.setCenter(ashburton);
-
-          let json = JSON.parse(this.responseText);
-          //loops through campsite json data and returns campsite information and adds to map
-          for (let i = 0; i < json.length; i++) {
-            let campsite = json[i];
-            console.log(campsite.name + "," + campsite.x + "," + campsite.y);
-            let latLong = convertToLatLong(campsite.x, campsite.y);
-            marker = new google.maps.Marker({
-              position: new google.maps.LatLng(latLong[0], latLong[1]),
-              map: map,
-              icon: iconHut
-            });
-            map.setMapTypeId('terrain');
-          }
-        }
-      };
-
-      xhr.send();
-      
+      docCall("huts", tekapo, iconHut);
     }
   } else console.log("No action selected");
-}
-
-function hutSi() {
-  if (rh.checked) {
-    if (di.value == "si") {
-      
-    }
-  }
 }
