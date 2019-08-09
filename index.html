@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <!--GEO.JS LIBRARY-->
     <script type="text/javascript" src="assets\js\geo.js"></script>
-    
+
 
     <title>NZ Holiday Helper</title>
 </head>
@@ -79,8 +79,13 @@
                 </div>
                 <!--END OF DROPDOWN-->
 
-                <!--START OF GOOGLE MAP-->
+                <!--START OF LOADER-->
+                <div id="loader">
+                    <img src="assets/images/ajax-loader.gif" alt="Spinning page loader" class="gif">
+                </div>
+                <!--END OF LOADER-->
 
+                <!--START OF GOOGLE MAP-->
                 <div id="map"></div>
                 <!--END OF GOOGLE MAP-->
             </div>
@@ -113,10 +118,11 @@
                     <p>Sign up for our monthly newsletter to keep up to date with tourism and travel news from around
                         New Zealand</p>
                     <form class="newsletter-form" onsubmit="return sendMail(this);" method="POST">
-                        <input class="newsletter-form" type="text" name="name" placeholder="Full Name" /><br>
-                        <input class="newsletter-form" type="email" name="emailaddress"
-                            placeholder="Email Address" /><br>
-                        <input class="newsletter-form" type="submit" value="Sign Up!" />
+                        <input class="newsletter-form" type="text" required name="name" placeholder="Full Name"/><br>
+                        <input class="newsletter-form" type="email" required name="emailaddress" placeholder="Email Address"
+                            /><br>
+                        <input class="newsletter-form" type="submit" this.form.reset(); onclick="clickAlert()"
+                            value="Sign Up!" />
                     </form>
                 </div>
             </div>
@@ -184,8 +190,9 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuKj1VRvEKFlfVKXjVlYa_4lOJEm3tusU&callback=initMap">
         </script>
     <!--GOOGLE MAPS CLUSTER MARKERS LIBRARY-->
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    
+    <script
+        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
 
 </body>
 

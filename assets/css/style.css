@@ -80,6 +80,25 @@
 
 /*-------------------------------Map*/
 
+#loader {
+    height: 80px;
+    width: 80px;
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: 
+    z-index: 999;
+    transition: all, 05s;
+}
+
+.gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #map {
     height: 860px;
     width: 100%;

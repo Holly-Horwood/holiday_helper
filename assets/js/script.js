@@ -4,7 +4,18 @@ const newZealand = { lat: -40.9006, lng: 174.886 };
 const putaruru = { lat: -38.0385, lng: 175.792754 };
 const tekapo = { lat: -44.010373, lng: 170.48368 };
 const markers = [];
+const loader = document.getElementById("loader")
 var map, iconHut, iconTent, marker, infoWindow;
+
+//Confirmation for email sign up
+function clickAlert() {
+  alert("Thank you for signing up to our Newsletter!");
+}
+
+// Spinner for when map is loading
+window.addEventListener("load", function() {
+  loader.style.visibility = "hidden";
+});
 
 // Clears all markers from map then sets memory array back to 0
 function clearMarkers() {
@@ -14,7 +25,7 @@ function clearMarkers() {
   markers.length = 0;
 }
 
-// sets all map properties
+// Sets all map properties
 function resetMap(mapCentre) {
   clearMarkers();
   map.setZoom(7);
@@ -33,8 +44,19 @@ function setMarkers(json, icon) {
       icon: icon
     });
     markers.push(marker);
+    infoWindow = new google.maps.InfoWindow();
+    google.maps.event.addListener(
+      marker,
+      "click",
+      (function(marker) {
+        return function() {
+          docCampsiteDetails(site.assetId);
+          infoWindow.setContent(site.name);
+          infoWindow.open(map, marker);
+        };
+      })(marker)
+    );
   }
-  infoWindow = new google.maps.InfoWindow();
 }
 
 // Calls DOC API for the specified Island and site type
@@ -48,6 +70,21 @@ function docCall(siteType, mapCentre, icon) {
       let json = JSON.parse(this.responseText);
       setMarkers(json, icon);
     }
+  };
+
+  xhr.send();
+}
+
+// Calls DOC to get specific site details
+function docCampsiteDetails(id) {
+  xhr.open("GET", "https://api.doc.govt.nz/v2/campsites/" + id + "/details", true);
+  xhr.setRequestHeader("X-API-Key", apiKey);
+
+  xhr.onreadystatechange = function() {
+    if (this.readyState === 4 && this.status === 200) {
+      let json = JSON.parse(this.responseText);
+      console.log(json);
+    } 
   };
 
   xhr.send();
