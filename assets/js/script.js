@@ -4,12 +4,29 @@ const newZealand = { lat: -40.9006, lng: 174.886 };
 const putaruru = { lat: -38.0385, lng: 175.792754 };
 const tekapo = { lat: -44.010373, lng: 170.48368 };
 const markers = [];
-const loader = document.getElementById("loader")
+const loader = document.getElementById("loader"); 
+const infoTemplate = `
+<div class="infoTemplate">
+Name: NAME<br>
+Region: REGION<br>
+Dogs allowed: DOGS<br>
+Facilities: FACILITIES<br>
+Activities: ACTIVITIES<br>
+<a href="STATICLINK"><u>Click here for more info!</u></a>
+</div>
+`
 var map, iconHut, iconTent, marker, infoWindow;
 
-//Confirmation for email sign up
-function clickAlert() {
+//Confirmation for email sign up but will not send as form handling not implemented for this project
+function clickAlert(event) {
+  //todo
+  //sendMail(this);
+  
   alert("Thank you for signing up to our Newsletter!");
+  this.form.reset();
+  event.preventDefault();
+
+  return false;
 }
 
 // Spinner for when map is loading
@@ -17,12 +34,19 @@ window.addEventListener("load", function() {
   loader.style.visibility = "hidden";
 });
 
+function startLoader() {
+  loader.style.visibility = "visible";
+}
+
+function stopLoader() {
+  loader.style.visibility = "hidden";
+}
+
 // Clears all markers from map then sets memory array back to 0
 function clearMarkers() {
-  for (let i = 0; i < markers.length; i++) {
+  for (i = 0; i < markers.length; i++) {
     markers[i].setMap(null);
-  }
-  markers.length = 0;
+}
 }
 
 // Sets all map properties
@@ -50,43 +74,53 @@ function setMarkers(json, icon) {
       "click",
       (function(marker) {
         return function() {
-          docCampsiteDetails(site.assetId);
-          infoWindow.setContent(site.name);
-          infoWindow.open(map, marker);
+          docCampsiteDetails(site.assetId, marker, infoWindow);
         };
       })(marker)
     );
   }
+  var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'assets/images/m'});
 }
 
 // Calls DOC API for the specified Island and site type
 function docCall(siteType, mapCentre, icon) {
+  startLoader();
   xhr.open("GET", "https://api.doc.govt.nz/v2/" + siteType, true);
   xhr.setRequestHeader("X-API-Key", apiKey);
-
+  
   xhr.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
       resetMap(mapCentre);
       let json = JSON.parse(this.responseText);
       setMarkers(json, icon);
     }
+    stopLoader();
   };
-
   xhr.send();
 }
 
 // Calls DOC to get specific site details
-function docCampsiteDetails(id) {
-  xhr.open("GET", "https://api.doc.govt.nz/v2/campsites/" + id + "/details", true);
+function docCampsiteDetails(id, marker, infoWindow) {
+  startLoader();
+  xhr.open("GET", "https://api.doc.govt.nz/v2/campsites/" + id + "/detail", true);
+  xhr.open("GET", "https://api.doc.govt.nz/v2/huts/" + id + "/detail", true);
   xhr.setRequestHeader("X-API-Key", apiKey);
 
   xhr.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
-      let json = JSON.parse(this.responseText);
-      console.log(json);
+      let site = JSON.parse(this.responseText);
+      infoWindow.setContent(infoTemplate
+        .replace("NAME", site.name)
+        .replace("REGION", site.region)
+        .replace("FACILITIES", site.facilities, [0, 1, 2])
+        .replace("ACTIVITIES", site.activities, [0, 1, 2])
+        .replace("DOGS", site.dogsAllowed)
+        .replace("STATICLINK", site.staticLink));
+      infoWindow.open(map, marker);
     } 
+    stopLoader();
   };
-
   xhr.send();
 }
 
@@ -330,11 +364,11 @@ function initMap() {
   });
   iconTent = {
     url: "assets/images/tent.png",
-    scaledSize: new google.maps.Size(20, 20)
+    scaledSize: new google.maps.Size(30, 30)
   };
   iconHut = {
     url: "assets/images/hut.png",
-    scaledSize: new google.maps.Size(20, 20)
+    scaledSize: new google.maps.Size(30, 30)
   };
 }
 
@@ -348,8 +382,8 @@ rc.onclick = searchSelect;
 
 function searchSelect(e) {
   if (rc.checked) {
-    if (di.value == "ni") {
-      docCall("campsites", putaruru, iconTent);
+    if (di.value == "ni") { 
+      docCall("campsites", putaruru, iconTent); 
     } else if (di.value == "si") {
       docCall("campsites", tekapo, iconTent);
     }
@@ -361,3 +395,7 @@ function searchSelect(e) {
     }
   } else console.log("No action selected");
 }
+
+
+
+

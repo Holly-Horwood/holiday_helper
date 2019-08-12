@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <!--GEO.JS LIBRARY-->
     <script type="text/javascript" src="assets\js\geo.js"></script>
+    <!--MARKER CLUSTERS-->
+    <script type="text/javascript" src="assets\js\markerclusterer.js"></script>
 
 
     <title>NZ Holiday Helper</title>
@@ -79,15 +81,14 @@
                 </div>
                 <!--END OF DROPDOWN-->
 
+                <!--START OF GOOGLE MAP-->
+                <div id="map"></div>
+                <!--END OF GOOGLE MAP-->
                 <!--START OF LOADER-->
                 <div id="loader">
                     <img src="assets/images/ajax-loader.gif" alt="Spinning page loader" class="gif">
                 </div>
                 <!--END OF LOADER-->
-
-                <!--START OF GOOGLE MAP-->
-                <div id="map"></div>
-                <!--END OF GOOGLE MAP-->
             </div>
 
 
@@ -117,12 +118,11 @@
                     <h3 class="newsletter-title">Newsletter</h3>
                     <p>Sign up for our monthly newsletter to keep up to date with tourism and travel news from around
                         New Zealand</p>
-                    <form class="newsletter-form" onsubmit="return sendMail(this);" method="POST">
-                        <input class="newsletter-form" type="text" required name="name" placeholder="Full Name"/><br>
-                        <input class="newsletter-form" type="email" required name="emailaddress" placeholder="Email Address"
-                            /><br>
-                        <input class="newsletter-form" type="submit" this.form.reset(); onclick="clickAlert()"
-                            value="Sign Up!" />
+                    <form class="newsletter-form" onsubmit="return clickAlert();" method="POST">
+                        <input class="newsletter-form" type="text" required name="name" placeholder="Full Name" /><br>
+                        <input class="newsletter-form" type="email" required name="emailaddress"
+                            placeholder="Email Address" /><br>
+                        <input class="newsletter-form" type="submit" id="submit" value="Sign Up!" />
                     </form>
                 </div>
             </div>

@@ -84,18 +84,17 @@
     height: 80px;
     width: 80px;
     position: fixed;
-    display: none;
-    top: 50%;
-    left: 50%;
-    transform: 
-    z-index: 999;
+    top: 55%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
     transition: all, 05s;
 }
 
 .gif {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 55%;
+    left: 40%;
     transform: translate(-50%, -50%);
 }
 
