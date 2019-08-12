@@ -54,6 +54,29 @@ TODO:
 
 ---
 
+Install the Heroku CLI
+Download and install the Heroku CLI.
+
+If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+
+$ heroku login
+Create a new Git repository
+Initialize a git repository in a new or existing directory
+
+$ cd my-project/
+$ git init
+$ heroku git:remote -a nz-holiday-helper
+Deploy your application
+Commit your code to the repository and deploy it to Heroku using Git.
+
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+Existing Git repository
+For existing repositories, simply add the heroku remote
+
+$ heroku git:remote -a nz-holiday-helper
+
 ##### User Story
 
 As a user on the website I want the ability to find accommodation at DOC sites around New Zealand. End user goal: Find a place to stay End business goal: Make finding accommodation easier Acceptance criteria: * Available to anyone travelling or holidaying in New Zealand.
