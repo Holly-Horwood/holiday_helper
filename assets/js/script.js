@@ -15,19 +15,18 @@ Activities: ACTIVITIES<br>
 <a href="STATICLINK"><u>Click here for more info!</u></a>
 </div>
 `
-var map, iconHut, iconTent, marker, infoWindow;
+var map, iconHut, iconTent, marker, infoWindow, markerCluster;
 
 //Confirmation for email sign up but will not send as form handling not implemented for this project
 function clickAlert(event) {
-  //todo
-  //sendMail(this);
-  
   alert("Thank you for signing up to our Newsletter!");
-  this.form.reset();
+  document.getElementById("email-form").reset();
   event.preventDefault();
-
+  event.stopPropagation();
   return false;
 }
+
+document.getElementById("submit").onclick=clickAlert;
 
 // Spinner for when map is loading
 window.addEventListener("load", function() {
@@ -44,9 +43,13 @@ function stopLoader() {
 
 // Clears all markers from map then sets memory array back to 0
 function clearMarkers() {
+  console.log(markers.length);
   for (i = 0; i < markers.length; i++) {
     markers[i].setMap(null);
 }
+    markers.length = 0;
+    if (markerCluster)
+      markerCluster.clearMarkers();
 }
 
 // Sets all map properties
@@ -58,7 +61,7 @@ function resetMap(mapCentre) {
 }
 
 //loops through site json data and gets site information and adds to map
-function setMarkers(json, icon) {
+function setMarkers(json, icon, siteType) {
   for (let i = 0; i < json.length; i++) {
     let site = json[i];
     let latLong = convertToLatLong(site.x, site.y);
@@ -74,12 +77,12 @@ function setMarkers(json, icon) {
       "click",
       (function(marker) {
         return function() {
-          docCampsiteDetails(site.assetId, marker, infowindow);
+          docSiteDetails(site.assetId, marker, infowindow, siteType);
         };
       })(marker)
     );
   }
-  var markerCluster = new MarkerClusterer(map, markers,
+  markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'assets/images/m'});
 }
 
@@ -93,18 +96,17 @@ function docCall(siteType, mapCentre, icon) {
     if (this.readyState === 4 && this.status === 200) {
       resetMap(mapCentre);
       let json = JSON.parse(this.responseText);
-      setMarkers(json, icon);
+      setMarkers(json, icon, siteType);
     }
     stopLoader();
   };
   xhr.send();
 }
 
-// Calls DOC to get specific site details
-function docCampsiteDetails(id, marker, infoWindow) {
+// Calls DOC API gets site details by id and adds to infowindow once marker is clicked
+function docSiteDetails(id, marker, infoWindow, siteType) {
   startLoader();
-  xhr.open("GET", "https://api.doc.govt.nz/v2/campsites/" + id + "/detail", true);
-  xhr.open("GET", "https://api.doc.govt.nz/v2/huts/" + id + "/detail", true);
+  xhr.open("GET", "https://api.doc.govt.nz/v2/" + siteType + "/" + id + "/detail", true);
   xhr.setRequestHeader("X-API-Key", apiKey);
 
   xhr.onreadystatechange = function() {
@@ -116,7 +118,7 @@ function docCampsiteDetails(id, marker, infoWindow) {
         .replace("FACILITIES", site.facilities, [0, 1, 2])
         .replace("ACTIVITIES", site.activities, [0, 1, 2])
         .replace("DOGS", site.dogsAllowed)
-        .replace("STATICLINK", site.staticLink));
+        .replace("STATICLINK", site.staticLink)); 
       infoWindow.open(map, marker);
     } 
     stopLoader();

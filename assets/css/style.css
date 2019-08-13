@@ -21,6 +21,10 @@
     color: #79807D;
 }
 
+.search-options {
+    background-color: #fff;
+}
+
 .fa-search {
     color: #83d46c;
 }
@@ -83,9 +87,9 @@
 #loader {
     height: 80px;
     width: 80px;
-    position: fixed;
-    top: 55%;
-    left: 40%;
+    position: absolute;
+    top: 38%;
+    left: 35%;
     transform: translate(-50%, -50%);
     z-index: 9999;
     transition: all, 05s;
@@ -93,8 +97,8 @@
 
 .gif {
     position: absolute;
-    top: 55%;
-    left: 40%;
+    top: 38%;
+    left: 35%;
     transform: translate(-50%, -50%);
 }
 
@@ -115,6 +119,8 @@
 
 .search-options {
     float: left;
+    padding: 1%;
+    border-radius: 10px;
     position: absolute;
     margin-top: 20%;
     margin-left: 15%;

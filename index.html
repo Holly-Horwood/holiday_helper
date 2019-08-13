@@ -110,19 +110,19 @@
                     <p>Forest & Bird protect some of New Zealands most unique and rare animal species.</p>
                 </div>
                 <div class="donate-btn">
-                    <button type="button" class="btn btn-lg" Click to Donate</button> <a class="btn-link"
+                    <button type="button" class="btn btn-lg"><a class="btn-link"
                         href="https://www.forestandbird.org.nz/support-us/donate-forest-bird" target="_blank">Click to
-                        Donate</a>
+                        Donate</a></button>
                 </div>
                 <div class="newsletter nz-links">
                     <h3 class="newsletter-title">Newsletter</h3>
                     <p>Sign up for our monthly newsletter to keep up to date with tourism and travel news from around
                         New Zealand</p>
-                    <form class="newsletter-form" onsubmit="return clickAlert();" method="POST">
+                    <form id="email-form" class="newsletter-form" method="POST">
                         <input class="newsletter-form" type="text" required name="name" placeholder="Full Name" /><br>
                         <input class="newsletter-form" type="email" required name="emailaddress"
                             placeholder="Email Address" /><br>
-                        <input class="newsletter-form" type="submit" id="submit" value="Sign Up!" />
+                        <button type="button" class="newsletter-form" id="submit" value="sign">Sign Up!</button>
                     </form>
                 </div>
             </div>
@@ -178,13 +178,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("user_6IJi6iUGTMBKBwowkfsSh");
-        })();
-    </script>
-    <script src="assets/js/sendEmail.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuKj1VRvEKFlfVKXjVlYa_4lOJEm3tusU&callback=initMap">

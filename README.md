@@ -20,7 +20,7 @@ This is my second milestone project for the Full Stack Software Development cour
 
  I spoke with travellers staying at three local camping grounds to ask what they thought would be most helpful in an app to assist them with their travel plans.  I also spoke to friends and family as well as hunters that use DOC (Department of Conservation) land regularly.
 
-**Audience:**
+**Audience:**file:///C:/Users/Holly/Desktop/Code/second-milestone-project/index.htmlfile:///C:/Users/Holly/Desktop/Code/second-milestone-project/index.html
 
  This site was designed for travellers and the general public looking places to stay within the DOC areas.
 
