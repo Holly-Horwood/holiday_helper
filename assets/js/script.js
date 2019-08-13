@@ -68,13 +68,13 @@ function setMarkers(json, icon) {
       icon: icon
     });
     markers.push(marker);
-    infoWindow = new google.maps.InfoWindow();
+    infowindow = new google.maps.InfoWindow();
     google.maps.event.addListener(
       marker,
       "click",
       (function(marker) {
         return function() {
-          docCampsiteDetails(site.assetId, marker, infoWindow);
+          docCampsiteDetails(site.assetId, marker, infowindow);
         };
       })(marker)
     );
