@@ -1,6 +1,6 @@
 # Second Milestone Project by Holly Horwood
 
-[NZ Holiday Helper Website](https://https://nz-holiday-helper.herokuapp.com/)
+[NZ Holiday Helper Website](https://holly-horwood.github.io/second-milestone-project/)
 
 ---
 
@@ -20,13 +20,25 @@ This is my second milestone project for the Full Stack Software Development cour
 
  I spoke with travellers staying at three local camping grounds to ask what they thought would be most helpful in an app to assist them with their travel plans.  I also spoke to friends and family as well as hunters that use DOC (Department of Conservation) land regularly.
 
-**Audience:**file:///C:/Users/Holly/Desktop/Code/second-milestone-project/index.htmlfile:///C:/Users/Holly/Desktop/Code/second-milestone-project/index.html
+**Audience:** 
 
- This site was designed for travellers and the general public looking places to stay within the DOC areas.
+ This site was designed for travellers and the general public looking places to stay within the DOC areas or New Zealand wilderness.
 
 **Navigation:**
 
 It is essential that the site is easy to navigate on different sized devices and that it is obvious how to use it. This was designed mobile first and is a single page static site for easy navigation, any external links can be clicked on and will open on a separate page so the user still has the original page open to easily return to. I decided to use relatively neutral colours for the content but with an earthy green to represent nature. 
+
+### **Scope Plane**
+
+surface
+
+skeleton
+
+structure
+
+scope
+
+strategy
 
 **Features:**
 

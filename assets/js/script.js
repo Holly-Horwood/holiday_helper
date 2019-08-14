@@ -19,8 +19,10 @@ var map, iconHut, iconTent, marker, infoWindow, markerCluster;
 
 //Confirmation for email sign up but will not send as form handling not implemented for this project
 function clickAlert(event) {
-  alert("Thank you for signing up to our Newsletter!");
-  document.getElementById("email-form").reset();
+  if(document.getElementById("email-form").reportValidity()) {
+    alert("Thank you for signing up to our Newsletter!");
+    document.getElementById("email-form").reset();
+  }  
   event.preventDefault();
   event.stopPropagation();
   return false;
@@ -128,6 +130,12 @@ function docSiteDetails(id, marker, infoWindow, siteType) {
 
 // Initialize and add the map
 function initMap() {
+  //Media query to change zoom level of map
+  let query = window.matchMedia("(max-width: 767px)");
+
+  if (query.matches) {
+    document.querySelector('map').zoom = "5";  
+  }else{
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 6,
     center: newZealand,
