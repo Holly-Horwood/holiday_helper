@@ -46,7 +46,7 @@ The map uses both a dropdown and radio buttons.  The user can select which Islan
 
 **Wireframes:**
 
-![Balsamic Mockup](assets\images\wireframes\nzholidayhelper.bmpr)
+![Balsamic Mockup](assets/images/mockup.png)
 
 ### **_Surface_**
 
