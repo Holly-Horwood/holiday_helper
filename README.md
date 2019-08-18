@@ -76,15 +76,17 @@ As a user on the website I want the ability to find accommodation at DOC sites a
 - Used to add style to the web page.
   
 **Bootstrap**
-- Bootstrap was mainly used for positioning with its grid system to position containers. It was also used to create buttons and dropdowns.
+- Bootstrap was mainly used for positioning with its grid system to position containers. It was also used to create buttons, dropdowns, navbar and cards.
 
 **Javascript**
 - Was used to connect with the APIs and to manipulate them.  It was also used to create some interactive aspects of the newsletter form.
--   
-jQuery TODO: ?
--   Google Maps API
--   DOC API
--  
+
+**DOC API**
+- Used to retrieve data on Department of Conservation campsites and huts throughout New Zealand.
+
+**Google Maps API**
+- Google maps was used to display the map of New Zealand and create markers and marker clusters.
+
 **Font Awesome**
 - Used for icons on the page such as the footer links and search icon.
     
@@ -201,7 +203,7 @@ All content written by Holly Horwood.
 - Tent and Hut icons by icons8.com
 - Favicon was generated using favicon.io
 - gatadeoro for his post on Stack Exchange that helped with the geo.js file creation https://gis.stackexchange.com/questions/225065/converting-nztm-new-zealand-transverse-mercator-to-lat-long
-- Google Maps API
+- Google Maps Marker Clusterer care of the team at google maps https://github.com/googlemaps/v3-utility-library/tree/master/markerclusterer
 
 **Acknowledgements:**
 
