@@ -211,5 +211,5 @@ All content written by Holly Horwood.
 
 Thanks to Sebastian Immel my mentor for all of his help and patience.  Thanks also to the students and staff at Code Institute especially my tutors Nakita, Haley and Dick.
 
-A special thanks to Kimberly Zito, I couldn't have done this without your guidence and support.
+Thank you also to Mick and Julian at DOC for all of their help and awesome API.
 
