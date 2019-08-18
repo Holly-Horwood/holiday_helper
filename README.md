@@ -69,34 +69,57 @@ As a user on the website I want the ability to find accommodation at DOC sites a
 
 ## **Technologies Used**
 
--   HTML5 - ?????????
--   CSS3
--   Bootstrap
--   Javascript
--   jQuery
--   Bootstrap
--   Font Awesome
+**HTML & HTML5**
+- HyperText Markup Language was used to create the structure        and layout of the index.html document. 
+  
+**CSS & CSS3**
+- Used to add style to the web page.
+  
+**Bootstrap**
+- Bootstrap was mainly used for positioning with its grid system to position containers. It was also used to create buttons and dropdowns.
+
+**Javascript**
+- Was used to connect with the APIs and to manipulate them.  It was also used to create some interactive aspects of the newsletter form.
+-   
+jQuery TODO: ?
 -   Google Maps API
--   DOC API    
+-   DOC API
+-  
+**Font Awesome**
+- Used for icons on the page such as the footer links and search icon.
+    
 
 
 ### **Other resources:**
 
--   W3Schools
--   W3C Markup & CSS Validator
--   JSHint
--   CSS Matic
--   Ajax Loader
--   Favicon
--   Stack Overflow
--   Icon8
--   Gimp
--   MDN
+**Stack Exchange**
+- Geo.js was found here coutesy of gatadeoro and converted from Python code to Javascript for use in this project. https://gis.stackexchange.com/questions/225065/converting-nztm-new-zealand-transverse-mercator-to-lat-long
 
+**Stack Overflow**
+- Used as a resource when needing help or guidance, mostly with Javascript.
+
+**W3C Markup & CSS Valiadators**
+- Used to check validity of HTML and CSS code used in this project.
+
+**JSHint**
+- Used to check all JS code for errors.
+
+**Ajax Loader**
+- Used to create the map loader icon.
+   
+**GIMP** 
+- Used to alter images and icons
+
+**MDN** 
+- Main resource for research and help.
 
 ---
 
 ## **Testing**
+
+**Running the Code**
+
+- Click on the following link to access the live site at Github pages https://holly-horwood.github.io/second-milestone-project/
 
 All tests were carried out manually by human beings.  Firstly all buttons and links were checked to make sure they functioned as expected.  This was done in several different browsers so that any browser related issues could be fixed, the browser results are as follows:
 
@@ -116,7 +139,15 @@ Passed. No issues were found when used on Firefox.
 
 Passed. No issues were found when used on Edge.
 
-### **Other Issues:**
+#### **External Testing**
+
+**W3C Markup & CSS Valiadators**
+- Used to check validity of HTML and CSS code used in this project, both returned no errors at completion.
+
+**JSHint**
+- Used to check all JS code for errors, none presented on completion of this project.
+
+#### **Issues:**
 
 - DOC API key returned CORS error.  Contacted developer of API who worked on resolving the issue, once it was fixed from their end they contacted me and I was able to connect without anymore errors.
 
@@ -128,7 +159,7 @@ Passed. No issues were found when used on Edge.
 
 -   In the future I would like to fix the loader to make sure it is spinning on each search page load.
 
-- I would also like to update the markers and colours as I don't currently like all of them.
+- I would also like to change the marker colours so they stand out more.
 
 ---
 
@@ -140,7 +171,8 @@ All coding was committed and pushed to my Github repositiory at:
 
 https://github.com/Holly-Horwood/second-milestone-project
 
-It was alos published on Github pages at:
+It was also published on Github pages at:
+
 
 https://holly-horwood.github.io/second-milestone-project/
 
@@ -166,8 +198,10 @@ All content written by Holly Horwood.
 - DOC Location Map Api - Crown Copyright: Department of Conservation Te Papa Atawhai [2019].
 - kea.jpg & cathedralcove.jpg both obtained from Flickers Creative Commons website.
 - All other images supplied by Holly Horwood and Ryan Connor from our personal collection.
-- Tent Icon by icons8.com
-- Google Maps
+- Tent and Hut icons by icons8.com
+- Favicon was generated using favicon.io
+- gatadeoro for his post on Stack Exchange that helped with the geo.js file creation https://gis.stackexchange.com/questions/225065/converting-nztm-new-zealand-transverse-mercator-to-lat-long
+- Google Maps API
 
 **Acknowledgements:**
 

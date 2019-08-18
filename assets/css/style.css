@@ -33,6 +33,14 @@
     color: #83d46c;
 }
 
+.btn-lg {
+    background-color: #83d46c;
+}
+
+.btn-lg:hover {
+    background-color: #83d499;
+}
+
 #footer-details {
     background-color: #fff;
 }
@@ -72,7 +80,7 @@
 
 .page-title h4 {
     font-style: italic;
-    font-weight: 350;
+    font-weight: 300;
     font-size: 1rem;
 }
 
@@ -275,17 +283,8 @@
     }
     
     .btn-lg {
-        background-color: #83d46c;
         font-weight: 600;
         text-decoration: none;
-    }
-    
-    .btn-link {
-        color: #fff;
-    }
-    
-    .btn-lg:hover {
-        background-color: #83d499;
     }
     
     .donate-btn {
