@@ -147,7 +147,7 @@ Passed. No issues were found when used on Edge.
 - Used to check validity of HTML and CSS code used in this project, both returned no errors at completion.
 
 **JSHint**
-- Used to check all JS code for errors, none presented on completion of this project.
+- Used to check all JS code for errors, none present on completion of this project.
 
 #### **Issues:**
 

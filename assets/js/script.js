@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 const apiKey = "AGzltg49Lx3bVQJdJjToy20ssY8ep6iJ9ai504vK";
 const xhr = new XMLHttpRequest();
 const newZealand = { lat: -41.270673, lng: 173.284455 };
@@ -48,7 +49,7 @@ function stopLoader() {
 
 // Clears all markers from map then sets memory array back to 0
 function clearMarkers() {
-  for (i = 0; i < markers.length; i++) {
+  for (let i = 0; i < markers.length; i++) {
     markers[i].setMap(null);
   }
   markers.length = 0;
@@ -74,13 +75,13 @@ function setMarkers(json, icon, siteType) {
       icon: icon
     });
     markers.push(marker);
-    infowindow = new google.maps.InfoWindow();
+    infoWindow = new google.maps.InfoWindow();
     google.maps.event.addListener(
       marker,
       "click",
       (function(marker) {
         return function() {
-          docSiteDetails(site.assetId, marker, infowindow, siteType);
+          docSiteDetails(site.assetId, marker, infoWindow, siteType);
         };
       })(marker)
     );
@@ -146,7 +147,7 @@ window.onresize = function(event) {
       map.setZoom(isnViewPort ? 6.1 : ismViewPort ? 6.2 : 6.5);
     } 
   else {
-    map.setZoom(isnViewPort ? 5.2 : ismViewPort ? 5.5 : 6,);
+    map.setZoom(isnViewPort ? 5.2 : ismViewPort ? 5.5 : 6);
   }
 };
 
