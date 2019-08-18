@@ -33,12 +33,13 @@
     color: #83d46c;
 }
 
-.btn-lg {
+.btn-lg, .donate-btn {
+    color: #fff;
     background-color: #83d46c;
 }
 
-.btn-lg:hover {
-    background-color: #83d499;
+.donate-btn:hover {
+    color: #808078;
 }
 
 #footer-details {
@@ -149,6 +150,23 @@
 
 .nz-sidebar {
     display: none;
+}
+
+.donate-btn {
+    border: none;
+    font-weight: 400;
+    font-size: 1.2em;
+    margin-top: 3%;
+}
+
+.donate-btn:focus:not(.focus-visible) {
+    outline: none;
+  }
+
+.btn-lg {
+    border-radius: 10px;
+    padding: 0;
+    margin-bottom: 20px;
 }
 
 /*-------------------------------Footer*/

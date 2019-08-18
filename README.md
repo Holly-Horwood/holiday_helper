@@ -89,8 +89,6 @@ As a user on the website I want the ability to find accommodation at DOC sites a
 
 **Font Awesome**
 - Used for icons on the page such as the footer links and search icon.
-    
-
 
 ### **Other resources:**
 
@@ -155,6 +153,8 @@ Passed. No issues were found when used on Edge.
 
 - Loader/Spinner not loading on all searches correctly.  This will be fixed in a future update.
 
+- Due to Google Maps using a mercator style map it was quite difficult to get the zoom to work correctly for New Zealand. New Zealand is harder to scale than other countries due to it's very Southern location on the map which means that the latitude and longitude axels are distorted.
+
 ---
 
 ## **Future Updates**
@@ -162,6 +162,8 @@ Passed. No issues were found when used on Edge.
 -   In the future I would like to fix the loader to make sure it is spinning on each search page load.
 
 - I would also like to change the marker colours so they stand out more.
+
+- Search box placement on smaller devices.  Some zoom levels proved difficult to not have part of the island covered by the search box so may look to implement a search box that resizes for smaller devices in the future.
 
 ---
 

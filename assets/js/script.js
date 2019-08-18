@@ -395,12 +395,12 @@ function initMap() {
       ]
     });
     iconTent = {
-      url: "assets/images/tent.png",
-      scaledSize: new google.maps.Size(30, 30)
+      url: "assets/images/tent.svg",
+      scaledSize: new google.maps.Size(20, 20)
     };
     iconHut = {
-      url: "assets/images/hut.png",
-      scaledSize: new google.maps.Size(30, 30)
+      url: "assets/images/hut.svg",
+      scaledSize: new google.maps.Size(20, 20)
     };
   }
   
