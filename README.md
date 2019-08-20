@@ -63,7 +63,7 @@ As a user on the website I want the ability to find accommodation at DOC sites a
 
 **End business goal:** Make finding accommodation easier.
 
-**Acceptance criteria:** Available to anyone travelling or holidaying in New Zealand.
+**Acceptance criteria:** Able to search New Zealand DOC Campsite and Huts on the map, find information about them and click on the more info link to redirect to DOC website to book.
 
 ---
 
@@ -121,7 +121,16 @@ As a user on the website I want the ability to find accommodation at DOC sites a
 
 - Click on the following link to access the live site at Github pages https://holly-horwood.github.io/second-milestone-project/
 
-All tests were carried out manually by human beings.  Firstly all buttons and links were checked to make sure they functioned as expected.  This was done in several different browsers so that any browser related issues could be fixed, the browser results are as follows:
+**Test Planning:**
+  All tests were carried out manually by humans.  For the browser testing the users will interact with the map and click on all links and buttons and observe the results as well as viewing the site on different view ports. 
+
+**Implementation:** 
+ Users clicked on all buttons and links and used the map in all possible variations, users also changed screen sizes throughout the process to make sure the site was responsive.
+
+**Results:** 
+ All buttons and links behaved as expected, and map zoom levels worked as intended.
+
+#### Browser Testing: #### 
 
 **Chrome**
 
@@ -153,7 +162,9 @@ Passed. No issues were found when used on Edge.
 
 - Loader/Spinner not loading on all searches correctly.  This will be fixed in a future update.
 
-- Due to Google Maps using a mercator style map it was quite difficult to get the zoom to work correctly for New Zealand. New Zealand is harder to scale than other countries due to it's very Southern location on the map which means that the latitude and longitude axels are distorted.
+- Marker clusterer was not clearer markers as intended on reload, this was fixed with some Javascript.
+
+- Due to Google Maps using a mercator style map it was quite difficult to get the zoom to work correctly for New Zealand. New Zealand is harder to scale than other countries due to it's very Southern location on the map which means that the latitude and longitude axes are distorted.
 
 ---
 
@@ -171,15 +182,6 @@ Passed. No issues were found when used on Edge.
 
 Initially this project was started in Cloud9 but after Cloud9 switched to AWS the decision was made to finish the project in VSCode due to issue using AWS.
 
-All coding was committed and pushed to my Github repositiory at:
-
-https://github.com/Holly-Horwood/second-milestone-project
-
-It was also published on Github pages at:
-
-
-https://holly-horwood.github.io/second-milestone-project/
-
 ### **Running The Code:**
 
 - Go to my repository https://github.com/Holly-Horwood/second-milestone-project
@@ -188,6 +190,22 @@ https://holly-horwood.github.io/second-milestone-project/
 - Open Git Bash
 - Type `git clone`, and then paste my URL that you copied.
 - Press enter and the clone will be created.
+
+### **GitHub** ###
+
+All coding was committed and pushed to my Github repositiory at:
+
+https://github.com/Holly-Horwood/second-milestone-project
+
+It was also published on Github pages at:
+
+https://holly-horwood.github.io/second-milestone-project/
+
+### **Deploying to Github Once Cloned and Edited** ###
+
+- In your terminal type `git add .` to stage all pending updates
+- Type `git commit -m "example massage"` add your own message explaining what you are commiting.
+- Type `git push -u origin master` to push to my repository
 
 ---
 
