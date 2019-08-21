@@ -178,6 +178,8 @@ Passed. No issues were found when used on Edge.
 
 - Search box placement on smaller devices.  Some zoom levels proved difficult to not have part of the island covered by the search box so may look to implement a search box that resizes for smaller devices in the future.
 
+- Fix image transition so it doesn't snap back to behind the map after hover.
+
 ---
 
 ## **Deployment**
