@@ -6,7 +6,7 @@
 /*-------------------------------Colours*/
 
 .navbar {
-    background-color: #83d46c
+    background-color: #67af53
 }
 
 .container-fluid {
@@ -14,7 +14,7 @@
 }
 
 .page-title h1 {
-    color: #83d46c;
+    color: #67af53;
 }
 
 .page-title h4 {
@@ -26,16 +26,16 @@
 }
 
 .fa-search {
-    color: #83d46c;
+    color: #67af53;
 }
 
 .links-title, .newsletter-title, .support {
-    color: #83d46c;
+    color: #67af53;
 }
 
 .btn-lg, .donate-btn {
     color: #fff;
-    background-color: #83d46c;
+    background-color: #67af53;
 }
 
 .donate-btn:hover {
@@ -47,7 +47,7 @@
 }
 
 .social-links i {
-    color: #83d46c;
+    color: #67af53;
 }
 
 .social-links i:hover {

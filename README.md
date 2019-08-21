@@ -5,7 +5,7 @@
 ---
 
 ## **Disclaimer:** 
-This website was designed for educational purposes only for the Code Institute.  All best endeavours have been made to ensure all content has been obtained legally and all good practice guide lines for web development have been followed.
+This website was designed for educational purposes only for the Code Institute.  All best endeavours have been made to ensure all content has been obtained legally and all good practice guidelines for web development have been followed.
 
 ---
 
@@ -50,7 +50,7 @@ The map uses both a dropdown and radio buttons.  The user can select which Islan
 
 ### **_Surface_**
 
-I designed this site using modern neutral colours.  Different variations of green are used throughout the site to represent the element of nature.  I chose grey and white for the map so as not to detract from the marker colours.  The site is very simplistic making it easier for the user to identify key areas quickly so they can use the site effectively.  The map does offer some extra features like the ability to switch from terrain view to satelite so that the user can see more detail on the map.  On the larger view there are more images and links to help and inspire the user.
+I designed this site using modern neutral colours.  Different variations of green are used throughout the site to represent the element of nature.  I chose grey and white for the map so as not to detract from the marker colours.  The site is very simplistic making it easier for the user to identify key areas quickly so they can use the site effectively.  The map does offer some extra features like the ability to switch from terrain view to satellite so that the user can see more detail on the map.  On the larger view there are more images and links to help and inspire the user.
 
 ---
 
@@ -93,12 +93,12 @@ As a user on the website I want the ability to find accommodation at DOC sites a
 ### **Other resources:**
 
 **Stack Exchange**
-- Geo.js was found here coutesy of gatadeoro and converted from Python code to Javascript for use in this project. https://gis.stackexchange.com/questions/225065/converting-nztm-new-zealand-transverse-mercator-to-lat-long
+- Geo.js was found here courtesy of gatadeoro and converted from Python code to Javascript for use in this project. https://gis.stackexchange.com/questions/225065/converting-nztm-new-zealand-transverse-mercator-to-lat-long
 
 **Stack Overflow**
 - Used as a resource when needing help or guidance, mostly with Javascript.
 
-**W3C Markup & CSS Valiadators**
+**W3C Markup & CSS Validators**
 - Used to check validity of HTML and CSS code used in this project.
 
 **JSHint**
@@ -122,7 +122,7 @@ As a user on the website I want the ability to find accommodation at DOC sites a
 - Click on the following link to access the live site at Github pages https://holly-horwood.github.io/second-milestone-project/
 
 **Test Planning:**
-  All tests were carried out manually by humans.  For the browser testing the users will interact with the map and click on all links and buttons and observe the results as well as viewing the site on different view ports. 
+  All tests were carried out manually by humans.  For the browser testing the users will interact with the map and click on all links and buttons and observe the results as well as viewing the site on different viewports. 
 
 **Implementation:** 
  Users clicked on all buttons and links and used the map in all possible variations, users also changed screen sizes throughout the process to make sure the site was responsive.
@@ -158,13 +158,15 @@ Passed. No issues were found when used on Edge.
 
 #### **Issues:**
 
+- DOC API is quite slow to run.
+
 - DOC API key returned CORS error.  Contacted developer of API who worked on resolving the issue, once it was fixed from their end they contacted me and I was able to connect without anymore errors.
 
 - Loader/Spinner not loading on all searches correctly.  This will be fixed in a future update.
 
-- Marker clusterer was not clearer markers as intended on reload, this was fixed with some Javascript.
+- Marker clusterer was not clearing markers as intended on reload, this was fixed with some Javascript.
 
-- Due to Google Maps using a mercator style map it was quite difficult to get the zoom to work correctly for New Zealand. New Zealand is harder to scale than other countries due to it's very Southern location on the map which means that the latitude and longitude axes are distorted.
+- Due to Google Maps using a Mercator style map it was quite difficult to get the zoom to work correctly for New Zealand. New Zealand is harder to scale than other countries due to it's very Southern location on the map which means that the latitude and longitude axes are distorted.
 
 ---
 
@@ -187,13 +189,13 @@ Initially this project was started in Cloud9 but after Cloud9 switched to AWS th
 - Go to my repository https://github.com/Holly-Horwood/second-milestone-project
 - Click on the clone or download button
 - In the Clone with HTTPs section, click  to copy the clone URL for my repository.
-- Open Git Bash
-- Type `git clone`, and then paste my URL that you copied.
+- Open your environment terminal
+- Type `git clone` into the command line and then paste my URL that you copied.
 - Press enter and the clone will be created.
 
 ### **GitHub** ###
 
-All coding was committed and pushed to my Github repositiory at:
+All coding was committed and pushed to my Github repository at:
 
 https://github.com/Holly-Horwood/second-milestone-project
 
@@ -204,7 +206,7 @@ https://holly-horwood.github.io/second-milestone-project/
 ### **Deploying to Github Once Cloned and Edited** ###
 
 - In your terminal type `git add .` to stage all pending updates
-- Type `git commit -m "example massage"` add your own message explaining what you are commiting.
+- Type `git commit -m "example massage"` add your own message explaining what you are committing.
 - Type `git push -u origin master` to push to my repository
 
 ---
