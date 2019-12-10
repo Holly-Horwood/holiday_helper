@@ -1,6 +1,6 @@
 # Second Milestone Project by Holly Horwood
 
-[NZ Holiday Helper Website](https://holly-horwood.github.io/second-milestone-project/)
+[NZ Holiday Helper Website](https://holly-horwood.github.io/holiday_helper/)
 
 ---
 
